@@ -1,22 +1,22 @@
 public class Player {
 
     private int playerID;
-    private int gameNumber;
+    private int myGuessNumber;
 
     Player(int playerID){
         this.playerID = playerID;
     }
 
     public int pickANumber(int max, int min){
-    gameNumber = Randomizer.randomBetween(max,min);
-    return gameNumber;
+    myGuessNumber = Randomizer.randomBetween(max,min);
+    return myGuessNumber;
     }
 
     public int getPlayerID() {
         return playerID;
     }
 
-    public int getMyNumber() {
-        return gameNumber;
+    public int getMyGuessNumber() {
+        return myGuessNumber;
     }
 }

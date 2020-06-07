@@ -31,7 +31,7 @@ public class GuessANumber {
             findWinner = findWinner();
             if(findWinner == true){
                 System.out.println("Congratulations, the player with ID: "
-                        + winner.getPlayerID() + " is The Winner, guessed the number " + winner.getMyNumber());
+                        + winner.getPlayerID() + " is The Winner, guessed the number " + winner.getMyGuessNumber());
             }else{
                 System.out.println("No winner, try again");
             }
