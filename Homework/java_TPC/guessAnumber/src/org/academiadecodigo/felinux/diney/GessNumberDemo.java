@@ -1,7 +1,9 @@
+package org.academiadecodigo.felinux.diney;
+
 public class GessNumberDemo {
     public static void main(String[] args) {
 
-        Player[] players = new Player[20];
+        Player[] players = new Player[5];
         gameMode(players ,0 ,20);
     }
 

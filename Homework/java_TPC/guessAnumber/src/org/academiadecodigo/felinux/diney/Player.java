@@ -1,3 +1,5 @@
+package org.academiadecodigo.felinux.diney;
+
 public class Player {
 
     private int playerID;

@@ -1,3 +1,5 @@
+package org.academiadecodigo.felinux.diney;
+
 public class Randomizer {
 
     public static int randomBetween(int max, int min){

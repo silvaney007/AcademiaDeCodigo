@@ -1,3 +1,5 @@
+package org.academiadecodigo.felinux.diney;
+
 public class GuessANumber {
     private static Player [] players;
     private static Player winner;
