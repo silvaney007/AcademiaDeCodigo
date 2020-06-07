@@ -2,7 +2,6 @@ public class GessNumberDemo {
     public static void main(String[] args) {
 
         Player[] players = new Player[20];
-        int ok =0;
         gameMode(players ,0 ,20);
     }
 
