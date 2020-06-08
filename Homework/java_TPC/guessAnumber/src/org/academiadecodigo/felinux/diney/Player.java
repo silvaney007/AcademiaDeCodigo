@@ -3,22 +3,16 @@ package org.academiadecodigo.felinux.diney;
 public class Player {
 
     private int playerID;
-    private int myGuessNumber;
 
     Player(int playerID){
         this.playerID = playerID;
     }
 
     public int pickANumber(int max, int min){
-    myGuessNumber = Randomizer.randomBetween(max,min);
-    return myGuessNumber;
+    return Randomizer.randomBetween(max,min);
     }
 
     public int getPlayerID() {
         return playerID;
-    }
-
-    public int getMyGuessNumber() {
-        return myGuessNumber;
     }
 }

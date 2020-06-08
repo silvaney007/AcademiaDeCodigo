@@ -1,51 +1,73 @@
 package org.academiadecodigo.felinux.diney;
 
 public class GuessANumber {
-    private static Player [] players;
-    private static Player winner;
-    private static int min;
-    private static int max;
-    private static int numberToGuess;
+    private Player [] players;
+    private int min;
+    private int max;
+    private GameModeType gameMode;
+    private int numberToGuess;
+    private int maxRound;
 
-    public GuessANumber(Player[] players,int min, int max) {
+    public GuessANumber(Player[] players,int min, int max, GameModeType gameMode, int maxRound) {
         this.players = players;
         this.min = min;
         this.max = max;
+        this.gameMode = gameMode;
+        this.maxRound = maxRound;
         numberToGuess = Randomizer.randomBetween(max,min);
     }
 
-    private boolean findWinner(){
+    private boolean findWinnerEasyMode(){
         for(Player player : players){
-            if(player.pickANumber(max,min)==numberToGuess) {
-                winner = player;
-                return true;
+            if(player.pickANumber(max,min)==numberToGuess) return true;
+        }
+        return false;
+    }
+
+    private boolean findWinnerHardMode() {
+        int[] numbersTryed = new int[(max - min) + 1];
+        int i = 0;
+        while (i < numbersTryed.length){
+            for (Player player : players) {
+                int playerGuess = player.pickANumber(max,min);
+                if (i == 0) {
+                    numbersTryed[i] = playerGuess;
+                } else {
+                    for (int j = 0; j <= i; j++) {
+                        if (playerGuess == numbersTryed[j]) {
+                            do {
+                               playerGuess = player.pickANumber(max, min);
+                            } while (playerGuess == numbersTryed[j]);
+                            numbersTryed[j] = playerGuess;
+                        }
+                    }
+                }
+                if (playerGuess == numberToGuess) return true;
+                i++;
+                if(i == numbersTryed.length) return false;
             }
         }
         return false;
     }
 
     public void startGame(){
-        int round =0;
-        boolean findWinner = false;
+        int round = 1;
+        boolean winner = false;
         System.out.println("***** Let the Game Begin *****");
-        do{
+        while(!winner){
             System.out.println("Round: " + round);
-            findWinner = findWinner();
-            if(findWinner == true){
-                System.out.println("Congratulations, the player with ID: "
-                        + winner.getPlayerID() + " is The Winner, guessed the number " + winner.getMyGuessNumber());
+            if (gameMode == GameModeType.EASY) winner = findWinnerEasyMode();
+            if (gameMode == GameModeType.HARD) winner = findWinnerHardMode();
+            if(winner == true){
+                System.out.println("The Winner, guessed the number " + numberToGuess);
             }else{
                 System.out.println("No winner, try again");
             }
             round++;
-        }while(findWinner == false);
-    }
-
-    public static int getMin() {
-        return min;
-    }
-
-    public static int getMax() {
-        return max;
+            if(round > maxRound & !winner){
+                System.out.println("The game End without winner");
+                break;
+            }
+        }
     }
 }
