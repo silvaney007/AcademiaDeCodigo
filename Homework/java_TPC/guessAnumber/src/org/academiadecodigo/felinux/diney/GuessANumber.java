@@ -34,12 +34,10 @@ public class GuessANumber {
                     numbersTryed[i] = playerGuess;
                 } else {
                     for (int j = 0; j <= i; j++) {
-                        if (playerGuess == numbersTryed[j]) {
-                            do {
-                               playerGuess = player.pickANumber(max, min);
-                            } while (playerGuess == numbersTryed[j]);
-                            numbersTryed[j] = playerGuess;
+                        while (playerGuess == numbersTryed[j]); {
+                            playerGuess = player.pickANumber(max, min);
                         }
+                        numbersTryed[j] = playerGuess;
                     }
                 }
                 if (playerGuess == numberToGuess) return true;
