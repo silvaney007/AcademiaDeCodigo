@@ -12,8 +12,10 @@ public class RockPaperScissorGame {
    }
 
    public void startGame(){
+
        boolean winner = false;
        int round = 1;
+
        while(!winner){
 
            HandType playerOneHand = playerOne.pickAHand();
