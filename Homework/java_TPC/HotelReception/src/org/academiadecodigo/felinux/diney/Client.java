@@ -5,10 +5,10 @@ public class Client {
     private int room;
     private HotelService hotelService;
 
-    public Client(String name){
+    public Client(String name, Hotel hotel){
         this.name = name;
         room = -1;
-        hotelService = new HotelService();
+        hotelService = new HotelService(hotel);
     }
 
     public void clientService(ServiceType service){

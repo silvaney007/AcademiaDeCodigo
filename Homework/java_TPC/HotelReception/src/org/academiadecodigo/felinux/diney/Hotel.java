@@ -1,9 +1,19 @@
 package org.academiadecodigo.felinux.diney;
 
 public class Hotel {
-    private static boolean [] rooms = {true, true, true, true, false, true, true, false, false, false};
+    private String name;
+    private boolean[] rooms;
 
-    public static boolean[] getRooms() {
+
+    public Hotel(String name, int numberRooms){
+    this.name = name;
+    rooms = new boolean[numberRooms];
+    }
+
+    public boolean[] getRooms() {
         return rooms;
+    }
+    public void updateRooms(int numberRoom, boolean update){
+        rooms[numberRoom] = update;
     }
 }

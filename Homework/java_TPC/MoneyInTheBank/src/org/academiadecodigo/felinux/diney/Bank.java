@@ -1,9 +1,9 @@
 package org.academiadecodigo.felinux.diney;
 
-public class Account {
+public class Bank {
     private double balance;
 
-    public Account(double balance){
+    public Bank(double balance){
         this.balance = balance;
     }
 

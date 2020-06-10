@@ -1,18 +1,16 @@
 package org.academiadecodigo.felinux.diney;
 
-import com.sun.org.apache.xpath.internal.operations.Operation;
-
 public class PersonInTheBank {
 
     private String name;
     private Wallet wallet;
-    private Account account;
+    private Bank bank;
 
 
-        public PersonInTheBank(String name){
+        public PersonInTheBank(String name,Bank bank, Wallet wallet ){
             this.name = name;
-            this.wallet = new Wallet(Randomizer.getRandom(100,1));
-            this.account = new Account(Randomizer.getRandom(1000,1));
+            this.wallet = wallet;
+            this.bank = bank;
         }
 
     public void accountOperation(OperationType operation, double amount){
@@ -20,11 +18,11 @@ public class PersonInTheBank {
             switch (operation) {
                 case DEPOSIT:
                     if (wallet.withdrawFund(amount)) {
-                        account.deposit(amount);
+                        bank.deposit(amount);
                     }
                     break;
                 case WITHDRAW:
-                    if(account.withdraw(amount)){
+                    if(bank.withdraw(amount)){
                     wallet.updateFund(amount);
                     }
                     break;
@@ -38,10 +36,10 @@ public class PersonInTheBank {
                 case WITHDRAW:
                 case DEPOSIT:
                     System.out.println("After " + operation.toString().toLowerCase()
-                            + " Your Balance is: " + account.getBalance());
+                            + " Your Balance is: " + bank.getBalance());
                     break;
                 case BALANCE:
-                    System.out.println("Your Balance is: " + account.getBalance());
+                    System.out.println("Your Balance is: " + bank.getBalance());
                     break;
             }
     }
