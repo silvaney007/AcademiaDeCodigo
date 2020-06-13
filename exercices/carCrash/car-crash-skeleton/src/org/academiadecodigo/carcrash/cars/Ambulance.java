@@ -13,6 +13,6 @@ public class Ambulance extends Car{
 
     @Override
     public String toString() {
-        return "A";
+        return "+";
     }
 }

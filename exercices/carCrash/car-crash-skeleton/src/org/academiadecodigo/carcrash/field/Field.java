@@ -5,7 +5,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.screen.ScreenWriter;
 import com.googlecode.lanterna.terminal.Terminal;
-import org.academiadecodigo.carcrash.cars.Car;
+import org.academiadecodigo.carcrash.cars.*;
 
 public final class Field {
 
@@ -59,7 +59,17 @@ public final class Field {
         for (Car c : cars) {
 
             if (!c.isCrashed()) {
-                screenWriter.drawString(c.getPos().getCol(), c.getPos().getRow(), c.toString());
+                if(c instanceof Fiat){
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.CYAN);
+                }else if( c instanceof Mustang){
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.MAGENTA);
+                }else if(c instanceof Ambulance){
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.YELLOW);
+                }else if(c instanceof Tank){
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.GREEN);
+                }else {
+                    screenWriter.drawString(c.getPos().getCol(), c.getPos().getRow(), c.toString());
+                }
             } else {
                 screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.RED, ScreenCharacterStyle.Blinking);
             }
