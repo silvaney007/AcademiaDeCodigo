@@ -1,6 +1,7 @@
 package org.academiadecodigo.carcrash.field;
 
 public class Position {
+
     private int col;
     private int row;
     private int speed;

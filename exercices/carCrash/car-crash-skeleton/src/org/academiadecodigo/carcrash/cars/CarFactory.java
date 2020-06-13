@@ -5,12 +5,12 @@ import org.academiadecodigo.carcrash.field.Field;
 import org.academiadecodigo.carcrash.field.Position;
 
 public class CarFactory {
+
     private static Position position;
 
     public static Car getNewCar() {
         CarType[] carTypes = CarType.values();
         int randomCar = Randomizer.random(carTypes.length-1);
-
         position = new Position(Randomizer.random(Field.getWidth()), Randomizer.random(Field.getHeight()));
 
         switch (carTypes[randomCar]){

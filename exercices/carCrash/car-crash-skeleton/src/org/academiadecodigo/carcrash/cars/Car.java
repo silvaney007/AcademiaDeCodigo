@@ -27,7 +27,6 @@ abstract  public class Car {
     }
 
     public void movePosition() {
-
         boolean success = false;
         while (!success) {
             switch (Randomizer.random(3)) {
