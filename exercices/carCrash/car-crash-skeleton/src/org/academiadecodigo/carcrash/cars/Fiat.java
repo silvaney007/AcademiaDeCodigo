@@ -8,6 +8,7 @@ public class Fiat extends Car{
         super();
         setPos(position);
         setCrashed(false);
+        setSpeed(1);
     }
 
     @Override

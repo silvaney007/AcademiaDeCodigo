@@ -9,6 +9,7 @@ abstract  public class Car {
      */
     private Position pos;
     private boolean crashed;
+    private int speed;
 
     public Position getPos() {
         return pos;
@@ -30,16 +31,20 @@ abstract  public class Car {
         boolean success = false;
         while (!success) {
             switch (Randomizer.random(3)) {
-                case 0: success = pos.backCol();
+                case 0: success = pos.backCol(speed);
                     break;
-                case 1: success = pos.frontCol();
+                case 1: success = pos.frontCol(speed);
                     break;
-                case 2: success = pos.downRow();
+                case 2: success = pos.downRow(speed);
                     break;
-                case 3: success = pos.UpRow();
+                case 3: success = pos.UpRow(speed);
                     break;
                 default:break;
             }
         }
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }

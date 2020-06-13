@@ -8,7 +8,7 @@ public class Mustang extends Car{
         super();
         setPos(position);
         setCrashed(false);
-        getPos().setSpeed(2);
+        setSpeed(2);
     }
 
     @Override

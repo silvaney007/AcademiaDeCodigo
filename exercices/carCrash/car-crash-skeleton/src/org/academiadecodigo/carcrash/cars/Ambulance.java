@@ -8,6 +8,7 @@ public class Ambulance extends Car{
         super();
         setPos(position);
         setCrashed(false);
+        setSpeed(1);
     }
 
     @Override
