@@ -17,3 +17,4 @@ public class GrumpGenie extends Genie {
         return -1;
     }
 }
+

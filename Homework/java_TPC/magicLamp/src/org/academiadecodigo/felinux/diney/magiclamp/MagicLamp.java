@@ -17,15 +17,15 @@ public class MagicLamp {
             remainingGenies = 0;
             totalRecharge++;
         }
-   }
+    }
     public GeniesType rubLamp(){
         if(remainingGenies < lampCapacity){
             if(remainingGenies % 2 == 0){
-               remainingGenies++;
-               return GeniesType.FRIENDLY;
+                remainingGenies++;
+                return GeniesType.FRIENDLY;
             }else {
                 remainingGenies++;
-            return GeniesType.GRUMP;
+                return GeniesType.GRUMP;
             }
         }
         return GeniesType.DEMON;
