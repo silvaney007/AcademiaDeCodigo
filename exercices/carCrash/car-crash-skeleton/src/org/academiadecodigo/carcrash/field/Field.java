@@ -62,11 +62,11 @@ public final class Field {
                 if(c instanceof Fiat){
                     screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.CYAN);
                 }else if( c instanceof Mustang){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.MAGENTA);
-                }else if(c instanceof Ambulance){
                     screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.YELLOW);
+                }else if(c instanceof Ambulance){
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.GREEN, Terminal.Color.WHITE, ScreenCharacterStyle.Blinking);
                 }else if(c instanceof Tank){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.GREEN);
+                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.MAGENTA);
                 }else {
                     screenWriter.drawString(c.getPos().getCol(), c.getPos().getRow(), c.toString());
                 }
