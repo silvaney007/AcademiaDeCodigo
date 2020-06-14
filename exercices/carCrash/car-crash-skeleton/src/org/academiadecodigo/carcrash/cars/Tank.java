@@ -18,6 +18,6 @@ public class Tank extends Car {
 
     @Override
     public String toString() {
-        return "T";
+        return "[|]";
     }
 }
