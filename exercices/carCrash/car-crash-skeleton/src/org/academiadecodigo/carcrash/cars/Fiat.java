@@ -6,7 +6,7 @@ public class Fiat extends Car{
 
     public Fiat(Position position){
         super();
-        setPos(position);
+        setPosition(position);
         setCrashed(false);
         setSpeed(1);
     }

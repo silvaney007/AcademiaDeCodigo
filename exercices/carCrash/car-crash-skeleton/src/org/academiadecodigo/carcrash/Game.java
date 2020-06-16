@@ -5,7 +5,6 @@ import org.academiadecodigo.carcrash.cars.Car;
 import org.academiadecodigo.carcrash.cars.CarFactory;
 import org.academiadecodigo.carcrash.cars.Tank;
 import org.academiadecodigo.carcrash.field.Field;
-import org.academiadecodigo.carcrash.field.Position;
 
 public class Game {
 
@@ -73,8 +72,8 @@ public class Game {
                 if (i == j) {
                     continue;
                 }
-                if (cars[i].getPos().getCol() == cars[j].getPos().getCol()
-                        && cars[i].getPos().getRow() == cars[j].getPos().getRow())
+                if (cars[i].getPosition().getCol() == cars[j].getPosition().getCol()
+                        && cars[i].getPosition().getRow() == cars[j].getPosition().getRow())
                 {
                     if (cars[i] instanceof Ambulance) {
                         cars[j].setCrashed(false);

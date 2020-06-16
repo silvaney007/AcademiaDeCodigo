@@ -7,20 +7,20 @@ abstract  public class Car {
     /**
      * The position of the car on the grid
      */
-    private Position pos;
+    private Position position;
     private boolean crashed;
     private int speed;
 
-    public Position getPos() {
-        return pos;
+    public Position getPosition() {
+        return position;
     }
 
     public boolean isCrashed() {
         return crashed;
     }
 
-    public void setPos(Position pos) {
-        this.pos = pos;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public void setCrashed(boolean crashed) {
@@ -31,13 +31,13 @@ abstract  public class Car {
         boolean success = false;
         while (!success) {
             switch (Randomizer.random(3)) {
-                case 0: success = pos.backCol(speed);
+                case 0: success = position.backCol(speed);
                     break;
-                case 1: success = pos.frontCol(speed);
+                case 1: success = position.frontCol(speed);
                     break;
-                case 2: success = pos.downRow(speed);
+                case 2: success = position.downRow(speed);
                     break;
-                case 3: success = pos.UpRow(speed);
+                case 3: success = position.UpRow(speed);
                     break;
                 default:break;
             }

@@ -6,8 +6,7 @@ public class Tank extends Car {
 
     public Tank(Position position) {
         super();
-        setPos(position);
-        setCrashed(false);
+        setPosition(position);
         setSpeed(1);
     }
 

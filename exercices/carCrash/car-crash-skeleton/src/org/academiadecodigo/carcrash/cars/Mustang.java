@@ -6,7 +6,7 @@ public class Mustang extends Car{
 
     public Mustang(Position position){
         super();
-        setPos(position);
+        setPosition(position);
         setCrashed(false);
         setSpeed(2);
     }

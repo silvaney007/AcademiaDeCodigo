@@ -18,6 +18,7 @@ public class CarFactory {
             case MUSTANG: return new Mustang(position);
             case AMBULANCE: return new Ambulance(position);
             case TANK: return new Tank(position);
+            default:break;
         }
         return null;
     }

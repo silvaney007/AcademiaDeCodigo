@@ -10,7 +10,6 @@ public class Position {
         this.col = col;
         this.row = row;
         this.trackType = TrackType.START;
-
     }
 
     public int getCol() {
@@ -22,7 +21,7 @@ public class Position {
     }
 
     public boolean backCol(int speed) {
-        if((col - speed) >= 0 && !trackType.equals(TrackType.FRONT)){
+        if((col - speed) > 0 && !trackType.equals(TrackType.FRONT)){
             col -= speed;
             trackType = TrackType.BACK;
             return true;
@@ -31,7 +30,7 @@ public class Position {
     }
 
     public boolean frontCol(int speed) {
-        if((col + speed) <= Field.getWidth() && !trackType.equals(TrackType.BACK)){
+        if((col + speed) < Field.getWidth() && !trackType.equals(TrackType.BACK)){
             col += speed;
             trackType = TrackType.FRONT;
             return true;
@@ -40,7 +39,7 @@ public class Position {
     }
 
     public boolean downRow(int speed) {
-        if( (row - speed) >= 0 && !trackType.equals(TrackType.UP)){
+        if( (row - speed) > 0 && !trackType.equals(TrackType.UP)){
             row -= speed;
             trackType = TrackType.DOWN;
             return true;
@@ -49,7 +48,7 @@ public class Position {
     }
 
     public boolean UpRow(int speed) {
-        if((row + speed) <= Field.getHeight() && !trackType.equals(TrackType.DOWN)){
+        if((row + speed) < Field.getHeight() && !trackType.equals(TrackType.DOWN)){
             row += speed;
             trackType = TrackType.UP;
             return true;

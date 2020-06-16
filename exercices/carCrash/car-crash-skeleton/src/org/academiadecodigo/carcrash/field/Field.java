@@ -60,18 +60,18 @@ public final class Field {
 
             if (!c.isCrashed()) {
                 if(c instanceof Fiat){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.MAGENTA, ScreenCharacterStyle.Bold);
+                    screen.putString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.MAGENTA, ScreenCharacterStyle.Bold);
                 }else if( c instanceof Mustang){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.CYAN, ScreenCharacterStyle.Bold);
+                    screen.putString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.CYAN, ScreenCharacterStyle.Bold);
                 }else if(c instanceof Ambulance){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.RED, Terminal.Color.WHITE, ScreenCharacterStyle.Bold);
+                    screen.putString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString(), Terminal.Color.RED, Terminal.Color.WHITE, ScreenCharacterStyle.Bold,ScreenCharacterStyle.Blinking);
                 }else if(c instanceof Tank){
-                    screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.GREEN, ScreenCharacterStyle.Bold);
+                    screen.putString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.GREEN, ScreenCharacterStyle.Bold);
                 }else {
-                    screenWriter.drawString(c.getPos().getCol(), c.getPos().getRow(), c.toString());
+                    screenWriter.drawString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString());
                 }
             } else {
-                screen.putString(c.getPos().getCol(), c.getPos().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.RED, ScreenCharacterStyle.Blinking);
+                screen.putString(c.getPosition().getCol(), c.getPosition().getRow(), c.toString(), Terminal.Color.WHITE, Terminal.Color.RED, ScreenCharacterStyle.Blinking);
             }
 
         }
