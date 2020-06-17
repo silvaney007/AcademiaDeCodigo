@@ -4,10 +4,9 @@ import org.academiadecodigo.carcrash.field.Position;
 
 public class Ambulance extends Car{
 
-    public Ambulance(Position position) {
+    public Ambulance() {
         super();
-        setPosition(position);
-        setCrashed(false);
+        setPosition(new Position());
         setSpeed(1);
     }
 

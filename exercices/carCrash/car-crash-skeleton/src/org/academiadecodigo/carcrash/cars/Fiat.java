@@ -4,10 +4,9 @@ import org.academiadecodigo.carcrash.field.Position;
 
 public class Fiat extends Car{
 
-    public Fiat(Position position){
+    public Fiat(){
         super();
-        setPosition(position);
-        setCrashed(false);
+        setPosition(new Position());
         setSpeed(1);
     }
 

@@ -4,10 +4,9 @@ import org.academiadecodigo.carcrash.field.Position;
 
 public class Mustang extends Car{
 
-    public Mustang(Position position){
+    public Mustang(){
         super();
-        setPosition(position);
-        setCrashed(false);
+        setPosition(new Position());
         setSpeed(2);
     }
 

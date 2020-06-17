@@ -64,29 +64,36 @@ public class Game {
 
     private void moveAllCars() {
         for (int i = 0; i < cars.length; i++) {
-            if (cars[i].isCrashed()) {
-                continue;
-            }
-            cars[i].movePosition();
-            for (int j = 0; j < cars.length; j++) {
-                if (i == j) {
+            for(int speed = 0; speed < cars[i].getSpeed(); speed++){
+                if (cars[i].isCrashed()) {
                     continue;
                 }
-                if (cars[i].getPosition().getCol() == cars[j].getPosition().getCol()
-                        && cars[i].getPosition().getRow() == cars[j].getPosition().getRow())
-                {
-                    if (cars[i] instanceof Ambulance) {
-                        cars[j].setCrashed(false);
-                    }else{
-                        if (!(cars[i] instanceof Tank) && cars[j] instanceof Ambulance){
-                            continue;
-                        } else {
-                            cars[i].setCrashed(true);
-                            cars[j].setCrashed(true);
-                        }
+                cars[i].movePosition();
+                for (int j = 0; j < cars.length; j++) {
+                    if (i != j) {
+                    carCrash(cars[i], cars[j]);
                     }
                 }
             }
         }
     }
+
+
+    private void carCrash(Car car1, Car car2){
+        if (car1.getPosition().getCol() == car2.getPosition().getCol()
+                && car1.getPosition().getRow() == car2.getPosition().getRow())
+        {
+            if (car1 instanceof Ambulance) {
+                car2.setCrashed(false);
+            }else{
+                if (!(car1 instanceof Tank) && car2 instanceof Ambulance){
+                    return;
+                } else {
+                    car1.setCrashed(true);
+                    car2.setCrashed(true);
+                }
+            }
+        }
+    }
 }
+

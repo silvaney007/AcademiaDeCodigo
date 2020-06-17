@@ -8,8 +8,9 @@ abstract  public class Car {
      * The position of the car on the grid
      */
     private Position position;
-    private boolean crashed;
+    private boolean crashed = false;
     private int speed;
+
 
     public Position getPosition() {
         return position;
@@ -27,17 +28,18 @@ abstract  public class Car {
         this.crashed = crashed;
     }
 
+
     public void movePosition() {
         boolean success = false;
         while (!success) {
             switch (Randomizer.random(3)) {
-                case 0: success = position.backCol(speed);
+                case 0: success = position.backCol();
                     break;
-                case 1: success = position.frontCol(speed);
+                case 1: success = position.frontCol();
                     break;
-                case 2: success = position.downRow(speed);
+                case 2: success = position.downRow();
                     break;
-                case 3: success = position.UpRow(speed);
+                case 3: success = position.UpRow();
                     break;
                 default:break;
             }
@@ -46,5 +48,9 @@ abstract  public class Car {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }

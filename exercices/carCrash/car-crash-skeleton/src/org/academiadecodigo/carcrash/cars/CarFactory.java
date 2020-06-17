@@ -6,20 +6,16 @@ import org.academiadecodigo.carcrash.field.Position;
 
 public class CarFactory {
 
-    private static Position position;
-
     public static Car getNewCar() {
         CarType[] carTypes = CarType.values();
         int randomCar = Randomizer.random(carTypes.length-1);
-        position = new Position(Randomizer.random(Field.getWidth()), Randomizer.random(Field.getHeight()));
 
         switch (carTypes[randomCar]){
-            case FIAT: return new Fiat(position);
-            case MUSTANG: return new Mustang(position);
-            case AMBULANCE: return new Ambulance(position);
-            case TANK: return new Tank(position);
-            default:break;
+            case FIAT: return new Fiat();
+            case MUSTANG: return new Mustang();
+            case AMBULANCE: return new Ambulance();
+            case TANK: return new Tank();
+            default:return new Fiat();
         }
-        return null;
     }
 }

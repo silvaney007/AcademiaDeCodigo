@@ -4,9 +4,9 @@ import org.academiadecodigo.carcrash.field.Position;
 
 public class Tank extends Car {
 
-    public Tank(Position position) {
+    public Tank() {
         super();
-        setPosition(position);
+        setPosition(new Position());
         setSpeed(1);
     }
 
@@ -17,6 +17,6 @@ public class Tank extends Car {
 
     @Override
     public String toString() {
-        return "[|]";
+        return "T";
     }
 }
