@@ -11,7 +11,7 @@ public class TestShowGrid {
         int padding = 10;
         int space = 20;
         int y = 0;
-        int color =25;
+        int setColor = 0;
 
         Rectangle[][] squares = new Rectangle[cols][rows];
 
@@ -19,10 +19,11 @@ public class TestShowGrid {
             int x = 0;
             for (int j = 0; j < rows; j++) {
                 squares[i][j] = new Rectangle(padding, padding, size, size);
-                squares[i][j].setColor(new Color(255-color,90,205));
+                squares[i][j].setColor(new Color(0,setColor,255));
                 squares[i][j].fill();
                 squares[i][j].translate(x, y);
                 x += size + space;
+                setColor+=2;
             }
             y += size + space;
         }
