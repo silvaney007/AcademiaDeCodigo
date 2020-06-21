@@ -5,7 +5,7 @@ public class ArmouredEnemy extends Enemy{
 
     public ArmouredEnemy(){
         super();
-        armour = 5;
+        armour = 20;
     }
 
     @Override
@@ -14,7 +14,7 @@ public class ArmouredEnemy extends Enemy{
             armour -= hit;
             return;
         }
-        setHealth(getHealth() - hit);
+        super.hit(hit);
     }
 
     @Override

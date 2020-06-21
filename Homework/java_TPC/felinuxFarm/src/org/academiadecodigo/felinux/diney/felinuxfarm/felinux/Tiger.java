@@ -1,9 +1,9 @@
-package org.academiadecodigo.felinux.diney.felinuxfarm;
+package org.academiadecodigo.felinux.diney.felinuxfarm.felinux;
 
 public class Tiger extends Felinux {
 
-    public Tiger(int id) {
-        super(id);
+    public Tiger() {
+        super();
     }
 
     @Override

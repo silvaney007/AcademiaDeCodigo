@@ -1,9 +1,9 @@
-package org.academiadecodigo.felinux.diney.felinuxfarm;
+package org.academiadecodigo.felinux.diney.felinuxfarm.felinux;
 
 public class Cat extends Felinux {
 
-    public Cat(int id) {
-        super(id);
+    public Cat() {
+        super();
     }
 
     @Override

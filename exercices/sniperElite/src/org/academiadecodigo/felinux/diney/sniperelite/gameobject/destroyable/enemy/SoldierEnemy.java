@@ -10,4 +10,9 @@ public class SoldierEnemy extends Enemy{
     public String getMessage(){
         return "I'm Soldier, the nice one ";
     }
+
+    @Override
+    public boolean isDestroyed() {
+        return false;
+    }
 }
