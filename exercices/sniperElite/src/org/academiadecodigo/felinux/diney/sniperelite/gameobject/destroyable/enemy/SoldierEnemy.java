@@ -1,4 +1,4 @@
-package org.academiadecodigo.felinux.diney.sniperelite.gameobject.enemy;
+package org.academiadecodigo.felinux.diney.sniperelite.gameobject.destroyable.enemy;
 
 public class SoldierEnemy extends Enemy{
 
@@ -8,11 +8,7 @@ public class SoldierEnemy extends Enemy{
 
     @Override
     public String getMessage(){
-        return "I'm Soldier, the nice one ";
+        return "The Soldier";
     }
 
-    @Override
-    public boolean isDestroyed() {
-        return false;
-    }
 }

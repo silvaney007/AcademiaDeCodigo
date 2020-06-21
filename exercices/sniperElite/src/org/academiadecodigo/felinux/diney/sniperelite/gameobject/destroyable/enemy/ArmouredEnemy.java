@@ -1,4 +1,4 @@
-package org.academiadecodigo.felinux.diney.sniperelite.gameobject.enemy;
+package org.academiadecodigo.felinux.diney.sniperelite.gameobject.destroyable.enemy;
 
 public class ArmouredEnemy extends Enemy{
     private int armour;
@@ -19,6 +19,6 @@ public class ArmouredEnemy extends Enemy{
 
     @Override
     public String getMessage(){
-        return "I'm the Armoured, the Strong One ";
+        return "The Armoured";
     }
 }

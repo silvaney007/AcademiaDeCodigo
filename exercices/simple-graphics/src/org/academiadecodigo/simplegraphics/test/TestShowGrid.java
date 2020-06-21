@@ -10,22 +10,16 @@ public class TestShowGrid {
         int size = 50;
         int padding = 10;
         int space = 20;
-        int y = 0;
-        int setColor = 0;
+        int position = size + space;
 
         Rectangle[][] squares = new Rectangle[cols][rows];
 
         for (int i = 0; i < cols; i++) {
-            int x = 0;
             for (int j = 0; j < rows; j++) {
-                squares[i][j] = new Rectangle(padding, padding, size, size);
-                squares[i][j].setColor(new Color(0,setColor,255));
+                squares[i][j] = new Rectangle(padding + position*i ,padding+position*j, size, size);
+                squares[i][j].setColor(new Color(0,(i+j)*padding,255));
                 squares[i][j].fill();
-                squares[i][j].translate(x, y);
-                x += size + space;
-                setColor+=2;
             }
-            y += size + space;
         }
     }
 }
