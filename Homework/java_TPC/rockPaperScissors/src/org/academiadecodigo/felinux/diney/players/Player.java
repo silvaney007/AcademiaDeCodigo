@@ -2,6 +2,7 @@ package org.academiadecodigo.felinux.diney;
 
 public class Player {
     private String name;
+    private int victory = 0;
 
     public Player(String name){
         this.name = name;
@@ -13,5 +14,13 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public int getVictory(){
+        return victory;
+    }
+
+    public void win() {
+        victory++;
     }
 }

@@ -1,4 +1,8 @@
-package org.academiadecodigo.felinux.diney;
+package org.academiadecodigo.felinux.diney.hotel.clients;
+
+import org.academiadecodigo.felinux.diney.hotel.ServiceType;
+import org.academiadecodigo.felinux.diney.hotel.Hotel;
+import org.academiadecodigo.felinux.diney.hotel.HotelService;
 
 public class Client {
     private String name;

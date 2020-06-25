@@ -1,4 +1,4 @@
-package org.academiadecodigo.felinux.diney;
+package org.academiadecodigo.felinux.diney.hotel;
 
 public enum ServiceType {
     CHECKIN,
