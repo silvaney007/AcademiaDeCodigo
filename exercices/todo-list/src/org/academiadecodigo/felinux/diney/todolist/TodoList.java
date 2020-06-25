@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class TodoList {
 
-    private PriorityQueue priorityQueue;
+    private PriorityQueue <TodoItem> priorityQueue;
 
     public TodoList() {
         this.priorityQueue = new PriorityQueue();
@@ -18,9 +18,7 @@ public class TodoList {
     priorityQueue.add(todoItem);
     }
 
-    public String remove(){
-        Object aux = priorityQueue.peek();
-        priorityQueue.remove();
-        return aux.toString();
+    public TodoItem remove(){
+         return priorityQueue.poll();
     }
 }

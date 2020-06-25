@@ -15,13 +15,12 @@ public class TodoItem  implements Comparable <TodoItem>{
 
     @Override
     public int compareTo(TodoItem todoItem){
-        int compare = this.importance.getImportance() - todoItem.getImportance().getImportance();
 
-        if( compare == 0){
-            return priority - todoItem.getPriority();
+        if(this.importance.compareTo(todoItem.getImportance()) == 0){
+            return this.priority - todoItem.getPriority();
         }
 
-        return compare;
+        return this.importance.compareTo(todoItem.getImportance());
     }
 
 
@@ -34,19 +33,9 @@ public class TodoItem  implements Comparable <TodoItem>{
     }
 
     public enum Importance{
-        HIGH(1),
-        MEDIUM(2),
-        LOW(3);
-
-        private int importance;
-
-        Importance(int priority) {
-            this.importance = priority;
-        }
-
-        public int getImportance() {
-            return importance;
-        }
+        HIGH,
+        MEDIUM,
+        LOW;
     }
 
 
