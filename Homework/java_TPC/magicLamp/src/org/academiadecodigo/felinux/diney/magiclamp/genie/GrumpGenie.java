@@ -1,20 +1,15 @@
-package org.academiadecodigo.felinux.diney.magiclamp;
+package org.academiadecodigo.felinux.diney.magiclamp.genie;
 
 public class GrumpGenie extends Genie {
-    private  boolean stopWish;
+    private  boolean noWish;
 
     public GrumpGenie (int maxWishes){
         super(maxWishes);
-        this.stopWish = false;
     }
 
     @Override
-    public int grantWish(){
-        if(!stopWish){
-            stopWish = true;
-            return 1;
-        }
-        return -1;
+    public void grantWish(){
+            noWish = true;
     }
 }
 

@@ -11,7 +11,6 @@ public class CarCrashX {
 
         g.init();
         g.start();
-
     }
 
 }

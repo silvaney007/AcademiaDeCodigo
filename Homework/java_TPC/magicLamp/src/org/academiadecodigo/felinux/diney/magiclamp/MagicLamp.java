@@ -1,5 +1,8 @@
 package org.academiadecodigo.felinux.diney.magiclamp;
 
+import org.academiadecodigo.felinux.diney.magiclamp.genie.DemonGenie;
+import org.academiadecodigo.felinux.diney.magiclamp.genie.GeniesType;
+
 public class MagicLamp {
 
     private int lampCapacity;

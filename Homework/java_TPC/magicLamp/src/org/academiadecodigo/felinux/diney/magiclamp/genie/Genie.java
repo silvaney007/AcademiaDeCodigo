@@ -1,4 +1,4 @@
-package org.academiadecodigo.felinux.diney.magiclamp;
+package org.academiadecodigo.felinux.diney.magiclamp.genie;
 
 public class Genie {
     private int maxWishes;
@@ -9,16 +9,22 @@ public class Genie {
         this.count = 0;
     }
 
-    public int grantWish(){
+    public void grantWish(){
         if(count < maxWishes){
             count++;
-            return 1;
         }
-        return -1;
     }
 
     public int getMaxWishes() {
         return maxWishes;
+    }
+
+    @Override
+    public String toString() {
+        return "Genie{" +
+                "maxWishes=" + maxWishes +
+                ", count=" + count +
+                '}';
     }
 }
 

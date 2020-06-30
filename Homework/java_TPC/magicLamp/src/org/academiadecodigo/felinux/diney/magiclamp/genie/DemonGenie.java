@@ -1,4 +1,4 @@
-package org.academiadecodigo.felinux.diney.magiclamp;
+package org.academiadecodigo.felinux.diney.magiclamp.genie;
 
 public class DemonGenie extends Genie{
     private boolean recycled;
@@ -6,7 +6,6 @@ public class DemonGenie extends Genie{
 
     public DemonGenie(int maxWishes) {
         super(maxWishes);
-        this.recycled = false;
         this.count = 0;
     }
 
@@ -15,12 +14,11 @@ public class DemonGenie extends Genie{
     }
 
     @Override
-    public int grantWish(){
+    public void grantWish(){
         if(count <= super.getMaxWishes() && !recycled){
             count++;
-            return 1;
+            return;
         }
         recycled = true;
-        return -1;
     }
 }

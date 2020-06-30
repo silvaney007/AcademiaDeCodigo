@@ -108,7 +108,7 @@ public class SimpleGfxGrid implements Grid {
      * @return y pixel value
      */
     public int rowToY(int row) {
-        return row*PIXEL;
+        return PADDING + row*PIXEL;
     }
 
     /**
@@ -117,6 +117,6 @@ public class SimpleGfxGrid implements Grid {
      * @return x pixel value
      */
     public int columnToX(int column) {
-        return column*PIXEL;
+        return PADDING + column*PIXEL;
     }
 }

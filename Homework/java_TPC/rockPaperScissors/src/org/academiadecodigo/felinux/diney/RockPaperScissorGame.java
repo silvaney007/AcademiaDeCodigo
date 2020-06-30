@@ -1,67 +1,91 @@
 package org.academiadecodigo.felinux.diney;
 
+import org.academiadecodigo.felinux.diney.players.HandType;
+import org.academiadecodigo.felinux.diney.players.Player;
+
 public class RockPaperScissorGame {
-   private Player playerOne;
-   private Player playerTwo;
-   private int rounds;
+    private int maxRounds;
+    private int rounds = 0;
 
-   public RockPaperScissorGame (Player playerOne, Player playerTwo, int rounds){
-       this.playerOne = playerOne;
-       this.playerTwo = playerTwo;
-       this.rounds = rounds;
-   }
+    private Player player1;
+    private Player player2;
 
-   public void startGame(){
+    public RockPaperScissorGame(int maxRounds, Player player1, Player player2) {
+        this.maxRounds = maxRounds;
+        this.player1 = player1;
+        this.player2 = player2;
+    }
 
-       boolean winner = false;
-       int round = 1;
+    /**
+     * Starts the game
+     */
+    public void start() {
 
-       while(!winner){
+        while(rounds < maxRounds) {
+            playRound();
+        }
 
-           HandType playerOneHand = playerOne.pickAHand();
-           HandType playerTwoHand = playerTwo.pickAHand();
+        displayResults();
+    }
 
-           if(playerOneHand == playerTwoHand){
-               System.out.println(playerOneHand + " VS " + playerTwoHand + ": Draw");
-           }else{
-                if(playerOneHand == HandType.ROCK){
-                    if (playerTwoHand == HandType.SCISSOR){
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || " + playerOne.getName() + " is the Winner");
-                        winner = true;
-                    }else {
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || " + playerTwo.getName() + " is the Winner");
-                        winner = true;
-                    }
-                }else if(playerOneHand == HandType.SCISSOR){
-                    if(playerTwoHand == HandType.ROCK){
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || "+ playerOne.getName() + " is the Winner");
-                        winner = true;
-                    }else {
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || " + playerTwo.getName() + " is the Winner");
-                        winner = true;
-                    }
-                }else if(playerOneHand == HandType.PAPER){
-                    if(playerTwoHand == HandType.ROCK){
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || " + playerOne.getName() + " is the Winner");
-                        winner = true;
-                    }else{
-                        System.out.println(playerOneHand + " VS " + playerTwoHand
-                           + " || " + playerTwo.getName() + " is the Winner");
-                        winner = true;
-                    }
+    /**
+     * Plays a round of the game
+     */
+    private void playRound() {
+
+        HandType p1Hand = player1.pickAHand();
+        HandType p2Hand = player2.pickAHand();
+
+        System.out.println(player1.getName() + " has " + player1.getVictory()+ " victories, now chooses " + p1Hand);
+        System.out.println(player2.getName() + " has " + player2.getVictory()+ " victories, now chooses " + p2Hand);
+
+
+        // It's a tie, let' play another round
+        if (p1Hand == p2Hand) {
+            playRound();
+            return;
+        }
+
+        rounds++;
+
+        Player winner = player1;
+
+        switch (p1Hand) {
+
+            case PAPER:
+
+                if (p2Hand == HandType.SCISSOR) {
+                    winner = player2;
                 }
-           }
-            round++;
-           if(round  > rounds && !winner){
-               System.out.println("No Winner");
-               break;
-           }
-       }
-   }
+                break;
+
+            case ROCK:
+                if (p2Hand == HandType.PAPER) {
+                    winner = player2;
+                }
+                break;
+
+            case SCISSOR:
+                if (p2Hand == HandType.ROCK) {
+                    winner = player2;
+                }
+                break;
+        }
+
+        winner.win();
+
+    }
+
+
+    private void displayResults() {
+
+        System.out.println("=== GAME END ===");
+        System.out.println(player1.getName() + " has " + player1.getVictory() + " victories");
+        System.out.println(player2.getName() + " has " + player2.getVictory() + " victories");
+
+        System.out.println("WINNER IS : " + (player1.getVictory() > player2.getVictory() ? player1.getName() : player2.getName()));
+
+    }
+
 }
 

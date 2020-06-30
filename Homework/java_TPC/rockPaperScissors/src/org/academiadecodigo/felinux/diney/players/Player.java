@@ -1,4 +1,6 @@
-package org.academiadecodigo.felinux.diney;
+package org.academiadecodigo.felinux.diney.players;
+
+import org.academiadecodigo.felinux.diney.Randomizer;
 
 public class Player {
     private String name;
