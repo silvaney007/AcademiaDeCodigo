@@ -5,6 +5,7 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Test {
     public static void main(String[] args) throws InterruptedException {
+
         //FIRST testing
         Rectangle r1 = new Rectangle(0,10,40,40);
         r1.setColor(new Color(123,40,30));

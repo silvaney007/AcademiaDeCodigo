@@ -1,0 +1,16 @@
+CREATE TABLE sailor(
+	id Integer AUTO_INCREMENT UNIQUE,
+	name CHAR(15) NOT NULL
+    age INTEGER NOT NULL;
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (name) REFERENCES boot(id)
+);
+
+CREATE TABLE boats(
+    id INTEGER AUTO_INCREMENT UNIQUE,
+    name CHAR(15) NOT NULL,
+    color CHAR(15) NOT NULL;
+    PRIMARY KEY (id),
+    FOREIGN KEY (name) REFERENCES sailor(id)
+);

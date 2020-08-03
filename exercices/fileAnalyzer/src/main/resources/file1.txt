@@ -1,0 +1,6 @@
+To a lot of programmers who are new to Optional or Java8,
+the difference between orElse() and orElseGet() is not clear.
+As a matter of fact, these two methods give the impression that they overlap each other in functionality.
+However, there's a subtle but very important difference between the two which can affect the performance
+of our code drastically if not well understood.
+Let's create a method called getMyDefault() in the test class which takes no arguments and returns a default value

@@ -1,0 +1,3 @@
+The orElseGet() method is similar to orElse().
+However, instead of taking a value to return if the Optional value is not present,
+it takes a supplier functional interface which is invoked and returns the value of the invocation
