@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaBank</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        modelType="text/css" />
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="javabank.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="bankStyle.css">
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+    <div class="jumbotron ">
+
+        <div class="text-center">
+            <h1>JavaBank</h1>
+        </div>
+        <div class="container">
+            <form>
+                <span>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname">
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone">
+                    </br>
+                    <button type="button" id="add-btn" class="btn btn-primary">Add</button>
+                    <button type="button" id="upd-btn" class="btn btn-success">Update</button>
+                    <button type="button" id="rst-btn" class="btn btn-warning">Reset</button>
+                </span>
+            </form>
+            </br>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            </div>
+            </br>
+            <table id="customerTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
